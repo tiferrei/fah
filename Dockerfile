@@ -1,4 +1,5 @@
 FROM nvidia/cuda:10.1-runtime-ubuntu18.04
+LABEL maintainer="Tiago Ferreira <me@tiferrei.com>"
 
 # Env Variables for nvidia
 ENV DEBIAN_FRONTEND noninteractive
