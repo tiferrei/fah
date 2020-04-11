@@ -32,4 +32,4 @@ RUN apt-get clean -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/* && a
 EXPOSE 7396 36330
 
 WORKDIR /var/lib/fahclient
-CMD ["sh", "-c", "/usr/bin/FAHClient --pid-file=/var/run/fahclient.pid --user=\"${USER}\" --team=\"${TEAM}\" --passkey=\"${PASSKEY}\" --power=full --gui-enabled=false --gpu=true --smp=true --allow=\"0/0\""]
+CMD ["sh", "-c", "/usr/bin/FAHClient --pid-file=/var/run/fahclient.pid --user=\"${USER}\" --team=\"${TEAM}\" --passkey=\"${PASSKEY}\" --power=full --gui-enabled=false --gpu=true --smp=true --web-allow=\"0/0\" --allow=\"0/0\""]
