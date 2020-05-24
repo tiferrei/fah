@@ -18,13 +18,13 @@ RUN touch /usr/share/doc/fahclient/sample-config.xml
 # Download/Install latest FAH client
 # See here for latest - https://foldingathome.org/alternative-downloads/
 RUN apt-get update && \
-  apt install wget -y && \
+  apt-get install wget -y && \
   wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.13_amd64.deb && \
   dpkg -i --force-depends fahclient_7.6.13_amd64.deb && \
   rm fahclient*.deb
 
 # Install Opencl 
-RUN apt install ocl-icd-opencl-dev ocl-icd-libopencl1 nvidia-opencl-dev -y
+RUN apt-get install ocl-icd-opencl-dev ocl-icd-libopencl1 nvidia-opencl-dev -y
 
 # To keep down the size of the image, clean out that cache when finished installing packages.
 RUN apt-get clean -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/* && apt-get autoremove -y
